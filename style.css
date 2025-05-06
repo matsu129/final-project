@@ -1,0 +1,200 @@
+/* TODO
+CSS Box Model
+CSS Basic Properties
+CSS Pseudo-classes & Link Styles
+CSS Clear Property
+CSS Syntax & Formatting
+CSS Comments
+Biggest Challenge */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+html {
+  scroll-padding-top: 100px;
+}
+body {
+  /* CSS Grid */
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+  grid-template-columns: 80% 20%;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+/* main navigation */
+  /* CSS Class Selector */
+.headnav{
+  grid-area: header;
+  position: sticky;
+  top: 0;
+  background-color: rgb(41, 42, 47);
+  z-index: 10;
+  width: 100%;
+}
+.headnav nav{
+  display: flex;
+  justify-content: space-between;
+}
+  /* CSS Type Selector */
+.headnav nav > ul,
+.headnav nav > ul > li{
+  /* CSS Inline Display */
+  display: inline-block;
+}
+nav a:link{
+  color: white;
+}
+nav a:visited{
+  color: white;
+}
+nav a:hover{
+  color: rgb(65, 146, 246);
+}
+nav a:active{
+  color: white;
+}
+nav #current-page{
+  color: rgb(167, 204, 249);
+}
+nav img{
+  display: inline-block;
+  max-width: 300px;
+  vertical-align: bottom;
+  padding-top: 20px;
+  padding-left: 15px;
+}
+.headnav nav li{
+  margin: 35px;
+}
+
+  /* CSS Id Selector */
+.dropdown{
+  position: relative;
+}
+#topics-menu{
+  position: absolute;
+  top: 100%;
+  z-index: 100;
+  padding-left: 5px;
+  background-color: #445066;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2vh);
+  transition: opacity 0.5s, transform 0.1s;
+}
+#topics-menu a {
+  /* CSS Block display */
+  display: block;
+  white-space: nowrap;
+}
+.dropdown:hover #topics-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+main{
+  grid-area: main;
+  padding: 30px 10px 30px 10px;
+}
+
+/* header */
+header{
+  margin: 10px 100px;
+}
+  /* CSS Float */
+.heroimg {
+  float: right;
+}
+header h1{
+  margin: 20px;
+  text-align: center;
+}
+
+/* section */
+section ol{
+  margin: 20px 100px;
+  /* CSS Flexbox Container */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+section li{
+  /* CSS Flexbox Items */
+  flex-basis: 10vw;
+}
+section a{
+  display: block;
+}
+.img-wrapper{
+  height:20vw;
+  /* CSS Overflow Property */
+  overflow: hidden;
+}
+.img-wrapper a:hover{
+  transform: scale(1.2, 1.2);
+  transition: transform 0.7s;
+}
+section img{
+  max-width: 25vw;
+  height: auto;
+}
+section article{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+section article img{
+  margin: 0 auto;
+}
+section article a,
+section article p{
+  text-align: center;
+}
+section h2{
+  text-align: center;
+  white-space: nowrap;
+  max-width: 450px;
+  font-size: 1.3vw;
+}
+/* aside */
+aside{
+  grid-area: aside;
+  background: linear-gradient(to bottom, #8c8b8a, #ffffff);
+  padding: 60px 20px 100px 20px;
+  overflow-y: auto;
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+aside h2{
+  color:rgb(89, 89, 90);
+  padding: 10px 20px;
+}
+aside ul li{
+  padding: 10px 20px;
+  text-shadow: 1px 2px 2px rgb(143, 143, 143);
+}
+
+/* footer */
+footer{
+  grid-area: footer;
+  background-color: rgb(31, 38, 38);
+  padding: 20px 0;
+  text-align: center;
+}
+footer nav ul li{
+  display: inline;
+  padding: 10px 20px;
+}
+footer p{
+  color: #ffffff;
+}
